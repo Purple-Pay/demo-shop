@@ -37,6 +37,12 @@ function dynamicCartSection(ob,itemCounter)
     // console.log(boxContainerDiv);
 
     buttonLink.appendChild(buttonText)
+
+    buttonLink.onclick = function () {
+        console.log({ window })
+        window.createPaymentSession("sample-order", ob.price, 137);
+    }
+
     cartContainer.appendChild(boxContainerDiv)
     cartContainer.appendChild(totalContainerDiv)
     // let cartMain = document.createElement('div')
@@ -79,8 +85,8 @@ totalDiv.appendChild(buttonDiv)
 let buttonTag = document.createElement('button')
 buttonDiv.appendChild(buttonTag)
 
-let buttonLink = document.createElement('a')
-buttonLink.href = '/orderPlaced.html?'
+let buttonLink = document.createElement('button')
+// buttonLink.href = '/orderPlaced.html?'
 buttonTag.appendChild(buttonLink)
 
 buttonText = document.createTextNode('Place Order')
