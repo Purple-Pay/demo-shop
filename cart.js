@@ -40,7 +40,7 @@ function dynamicCartSection(ob,itemCounter)
 
     buttonLink.onclick = function () {
         console.log({ window })
-        window.createPaymentSession("sample-order", ob.price, 137);
+        window.createPaymentSession("sample-order", ob.price, 592);
     }
 
     cartContainer.appendChild(boxContainerDiv)
