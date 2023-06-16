@@ -12,6 +12,11 @@ let cartContainer = document.getElementById('cartContainer')
 let boxContainerDiv = document.createElement('div')
 boxContainerDiv.id = 'boxContainer'
 
+function successCallback() {
+    const host = window.location.host;
+    window.location.href = `http://${host}/orderPlaced.html`;
+}
+
 // DYNAMIC CODE TO SHOW THE SELECTED ITEMS IN YOUR CART
 function dynamicCartSection(ob,itemCounter)
 {
@@ -40,7 +45,7 @@ function dynamicCartSection(ob,itemCounter)
 
     buttonLink.onclick = function () {
         console.log({ window })
-        window.createPaymentSession("sample-order", ob.price / 1000, 592);
+        window.createPaymentSession("sample-order", ob.price / 1000, 592, successCallback);
     }
 
     cartContainer.appendChild(boxContainerDiv)
