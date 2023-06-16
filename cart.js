@@ -30,7 +30,7 @@ function dynamicCartSection(ob,itemCounter)
     boxDiv.appendChild(boxh3)
 
     let boxh4 = document.createElement('h4')
-    let h4Text = document.createTextNode('Amount: Rs' + ob.price)
+    let h4Text = document.createTextNode('Amount: $' + ob.price / 1000)
     boxh4.appendChild(h4Text)
     boxDiv.appendChild(boxh4)
 
@@ -40,7 +40,7 @@ function dynamicCartSection(ob,itemCounter)
 
     buttonLink.onclick = function () {
         console.log({ window })
-        window.createPaymentSession("sample-order", ob.price, 592);
+        window.createPaymentSession("sample-order", ob.price / 1000, 592);
     }
 
     cartContainer.appendChild(boxContainerDiv)
