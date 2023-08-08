@@ -45,7 +45,7 @@ function dynamicCartSection(ob,itemCounter)
 
     buttonLink.onclick = function () {
         console.log({ window })
-        window.createPaymentSession("sample-order", ob.price / 1000, 592, successCallback);
+        window.createPaymentSession("sample-order", ob.price / 1000, 137, successCallback);
     }
 
     cartContainer.appendChild(boxContainerDiv)
